@@ -24,7 +24,7 @@ async def request(client,i):
 
         try:
             async with sem:
-                response=await client.get("https://httpbin.org/status/500")
+                response=await client.get("https://httpbin.org")
             print(f"第{i}个请求,状态码{response.status_code}")
             response.raise_for_status()
             print(f"请求{i}成功")
